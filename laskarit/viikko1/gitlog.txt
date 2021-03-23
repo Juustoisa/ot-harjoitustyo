@@ -1,0 +1,114 @@
+commit dde656694b7107acd26de218df4d7bd65c2b226c
+Author: Juuso Tamminen <juustoisa@gmail.com>
+Date:   Tue Mar 23 20:38:58 2021 +0200
+
+    poistettiin file1, uudelleennimettiin file2
+
+ tiedostoja/file1             | 1 -
+ tiedostoja/{file2 => file22} | 0
+ 2 files changed, 1 deletion(-)
+
+commit fe59db43e062dc86237c6e9de62cfadedb594770
+Author: Juuso Tamminen <juustoisa@gmail.com>
+Date:   Tue Mar 23 20:33:56 2021 +0200
+
+    lisättiin tiedostoja/file1..2..3
+
+ tiedostoja/file1 | 1 +
+ tiedostoja/file2 | 1 +
+ tiedostoja/file3 | 1 +
+ 3 files changed, 3 insertions(+)
+
+commit c7f32b6f2d04bf0bf111bd027849e37356674dc0
+Author: Juuso Tamminen <juustoisa@gmail.com>
+Date:   Tue Mar 23 20:25:13 2021 +0200
+
+    muutettiin eka ja kolmas.txt
+
+ eka.txt    | 3 ++-
+ kolmas.txt | 2 +-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
+
+commit aa6f3b529ed666f796b72d6a6a7939cb55d496f8
+Author: Juuso Tamminen <juustoisa@gmail.com>
+Date:   Tue Mar 23 20:23:26 2021 +0200
+
+    tiedosto.txt renamed to eka.txt
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 512189168d0e26d5c127ca8a6e2cf6afe0db30ba
+Author: Juuso Tamminen <juustoisa@gmail.com>
+Date:   Tue Mar 23 20:22:40 2021 +0200
+
+    poistettiin toinen.txt
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit 27a53404c850e62051ca08077b27b57f0bc87756
+Author: Juuso Tamminen <juustoisa@gmail.com>
+Date:   Tue Mar 23 20:20:16 2021 +0200
+
+    muutettiin tekstiä
+
+ tiedosto.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+commit 2c99a46e1093f5f9b29e67b0bd5cfed7ad799407
+Author: Juuso Tamminen <juustoisa@gmail.com>
+Date:   Tue Mar 23 20:19:26 2021 +0200
+
+    lisättiin paljon tekstiä
+
+ tiedosto.txt | 10 +++++++++-
+ 1 file changed, 9 insertions(+), 1 deletion(-)
+
+commit a8e44834fc2b204db07ba67cf888bac78bac52d2
+Author: Juuso Tamminen <juustoisa@gmail.com>
+Date:   Tue Mar 23 20:17:32 2021 +0200
+
+    Luotiin stuff/jokin.txt
+
+ stuff/jokin.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 00c45dc475287c7c89a6074a4145725376583ee1
+Author: Juuso Tamminen <juustoisa@gmail.com>
+Date:   Tue Mar 23 20:16:42 2021 +0200
+
+    Muutettiin toinen ja kolmas
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit d7c2b37c6344bee511b103b476603d1354a72062
+Author: Juuso Tamminen <juustoisa@gmail.com>
+Date:   Tue Mar 23 20:16:00 2021 +0200
+
+    lisättiin kolmas
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 05f34d60dd48139952b4ac28d26852d6a9e2bf74
+Author: Juuso Tamminen <juustoisa@gmail.com>
+Date:   Tue Mar 23 20:14:58 2021 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 9283a799f0c4c5bf14f70769ec3b27a5127e3c3f
+Author: Juuso Tamminen <juustoisa@gmail.com>
+Date:   Tue Mar 23 20:13:58 2021 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
