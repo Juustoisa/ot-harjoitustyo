@@ -1,9 +1,14 @@
+
 # Nameless project
 
   *...to be named*
   
+## Exercises
+#### viikko 1
+  [gitlog.txt](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
   
-
+  
+  [komentorivi.txt](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 ## User guide
 
 
@@ -26,4 +31,3 @@ In app folder:
 ```console
 
 $ TBA command to start app
-
