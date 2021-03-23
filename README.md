@@ -27,7 +27,7 @@ $ git clone git@github.com:Juustoisa/ot-harjoitustyo.git
 In app folder:
 
 ```console
-$ TBA command to start app
+$ Command to run the app is missing and so is the app.
 ```
 
 _...to be continued_
