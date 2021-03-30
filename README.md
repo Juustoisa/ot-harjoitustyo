@@ -10,6 +10,10 @@ _...to be named_
 
 [komentorivi.txt](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
+#### viikko 2
+
+[Kattavuusraportti.png](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/laskarit/viikko2/Kattavuusraportti.png)
+
 ## User guide
 
 ### Steps
