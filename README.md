@@ -1,23 +1,16 @@
+# Tea Storehouse
 
-# Ohjelmistotekniikka, project Tea Storehouse
+A tea organizing app in the making.
 
-## The Project
+![enter image description here](https://image.flaticon.com/icons/png/512/112/112430.png)
+
+## Documentation
+
 [Requirement specification](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/dokumentaatio/Vaatimusmaarittely.md)
 
 [Record of working hours](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/dokumentaatio/Tuntikirjanpito.md)
 
 _...records will get translated in the near future_
-## Exercises
-
-#### Week 1
-
-[gitlog.txt](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
-
-[komentorivi.txt](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
-
-#### Week 2
-
-[Kattavuusraportti.png](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/laskarit/viikko2/Kattavuusraportti.png)
 
 ## User guide
 
@@ -28,14 +21,27 @@ _...records will get translated in the near future_
 In a location of your choice:
 
 ```console
+
 $ git clone git@github.com:Juustoisa/ot-harjoitustyo.git
+
 ```
 
-#### 2. Run
+#### 2. To Run
 
-In app folder:
+In TeaStorehouse folder:
 
 ```console
-$ Command to run the app is missing and so is the app.
+
+$ mvn compile exec:java -Dexec.mainClass=TeaStorehouse.Main
+
 ```
 
+#### 3. To Test
+
+In TeaStorehouse folder:
+
+```console
+
+$ mvn test
+
+```
