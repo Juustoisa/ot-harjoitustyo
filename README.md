@@ -6,9 +6,9 @@ A tea organizing app in the making.
 
 ## Documentation
 
-[Requirement specification](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/dokumentaatio/Vaatimusmaarittely.md)
+[Requirement specification](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/TeaStorehouse/Documentation/Vaatimusmaarittely.md)
 
-[Record of working hours](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/dokumentaatio/Tuntikirjanpito.md)
+[Record of working hours](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/TeaStorehouse/Documentation/Tuntikirjanpito.md)
 
 _...records will get translated in the near future_
 
