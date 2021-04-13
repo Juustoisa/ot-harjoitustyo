@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TeaStorehouse.dbtests;
+package TeaStorehouse.controllertests;
 
 import TeaStorehouse.Db.Db;
 import TeaStorehouse.controllers.teaController;
