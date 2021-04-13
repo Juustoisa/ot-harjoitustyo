@@ -39,12 +39,26 @@ $ mvn compile exec:java -Dexec.mainClass=TeaStorehouse.Main
 
 ```
 
-#### 3. To Test
+#### 3. Tests
 
-In TeaStorehouse folder:
+To test enter
 
 ```console
 
 $ mvn test
 
 ```
+
+In TeaStorehouse folder
+
+---
+
+For test coverage report enter:
+
+```console
+
+$ mvn jacoco:report
+
+```
+
+In TeaStorehouse folder
