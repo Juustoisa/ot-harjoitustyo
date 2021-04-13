@@ -1,0 +1,17 @@
+title OT-Machine
+
+UnknownClass->kone: kone = new Machine()
+kone->tank: tank = new FuelTank()
+kone->tank: fill(40)
+kone->engine: engine = new Engine(tank)
+UnknownClass->kone: drive()
+kone->+engine: start()
+engine->-tank: consume(5)
+note right of tank: fuel left: 35
+kone->+engine: isRunning()
+engine->+tank: contentsLeft()
+tank-->-engine: 35
+engine-->-kone: true
+kone->+engine: useEnergy()
+engine->-tank: consume(10)
+note right of tank: fuel left: 25
