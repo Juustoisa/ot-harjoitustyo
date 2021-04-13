@@ -1,16 +1,21 @@
-# Nameless project
 
-_...to be named_
+# Ohjelmistotekniikka, project Tea Storehouse
 
+## The Project
+[Requirement specification](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/dokumentaatio/Vaatimusmaarittely.md)
+
+[Record of working hours](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/dokumentaatio/Tuntikirjanpito.md)
+
+_...records will get translated in the near future_
 ## Exercises
 
-#### viikko 1
+#### Week 1
 
 [gitlog.txt](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
 
 [komentorivi.txt](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
-#### viikko 2
+#### Week 2
 
 [Kattavuusraportti.png](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/laskarit/viikko2/Kattavuusraportti.png)
 
@@ -34,4 +39,3 @@ In app folder:
 $ Command to run the app is missing and so is the app.
 ```
 
-_...to be continued_
