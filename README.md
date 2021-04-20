@@ -4,6 +4,9 @@ A tea organizing app in the making.
 
 ![enter image description here](https://image.flaticon.com/icons/png/512/112/112430.png)
 
+**As of 20.04:**
+Project has been changed to use GUI, took longer than expected, ability to add teas to database has been added. Checkstyle has been implemented. Pretty slow progress for now.
+
 **As of 13.04:**
 Project has been started, there's some basic skeletons in place, mut not much functionality yet. By choosing to add a new tea to the database a placeholder will be saved and all the saved placeholders can be listed. The ui is text-based for now.
 
@@ -13,7 +16,7 @@ Project has been started, there's some basic skeletons in place, mut not much fu
 
 [Record of working hours](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/TeaStorehouse/Documentation/Tuntikirjanpito.md)
 
-_...records will get translated in the near future... maybe..._
+[Architecture](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/TeaStorehouse/Documentation/arkkitehtuuri.md)
 
 ## User guide
 
@@ -58,6 +61,17 @@ For test coverage report enter:
 ```console
 
 $ mvn jacoco:report
+
+```
+
+In TeaStorehouse folder
+
+
+For checkstyle report enter:
+
+```console
+
+$ mvn jxr:jxr checkstyle:checkstyle
 
 ```
 
