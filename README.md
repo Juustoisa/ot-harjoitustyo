@@ -66,6 +66,7 @@ $ mvn jacoco:report
 
 In TeaStorehouse folder
 
+---
 
 For checkstyle report enter:
 
