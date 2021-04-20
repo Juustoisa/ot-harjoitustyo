@@ -1,4 +1,4 @@
-package TeaStorehouse.utils;
+package teastorehouse.utils;
 import java.util.Scanner;
 
 public class IO {

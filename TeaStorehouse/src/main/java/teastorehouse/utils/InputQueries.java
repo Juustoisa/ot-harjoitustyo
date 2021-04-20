@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TeaStorehouse.utils;
+package teastorehouse.utils;
 
-public class inputQueries {
+public class InputQueries {
     
     
     

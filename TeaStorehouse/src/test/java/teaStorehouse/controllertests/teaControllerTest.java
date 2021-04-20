@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package TeaStorehouse.controllertests;
+package teaStorehouse.controllertests;
 
-import TeaStorehouse.Db.Db;
-import TeaStorehouse.controllers.teaController;
+import teastorehouse.db.Db;
+import teastorehouse.controllers.TeaController;
 import java.util.Arrays;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -23,13 +23,13 @@ import static org.mockito.Mockito.mock;
 public class teaControllerTest {
 
     Db dbTest;
-    teaController tC;
+    TeaController tC;
     String[] userinput = new String[7];
 
     @Before
     public void setUp() {
         dbTest = mock(Db.class);
-        tC = new teaController(dbTest);
+        tC = new TeaController(dbTest);
         Arrays.fill(userinput, "");
     }
     

@@ -1,4 +1,4 @@
-package TeaStorehouse.Db;
+package teastorehouse.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -53,7 +53,7 @@ public class Db {
         return result;
     }
     
-    public Boolean addTea(String[] variables){
+    public Boolean addTea(String[] variables) {
         // [0.id, 1.name String, 2.teatype String, 3.score Double, 4.price Double, 5.amount Double, 6.usage Double]
         String sql = "INSERT INTO teas(name, teatype, score, price, amount, usage) VALUES(?,?,?,?,?,?)";
         try {
