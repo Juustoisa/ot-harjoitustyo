@@ -19,10 +19,10 @@ Sovelluksen kehittäminen aloitetaan tekstikäyttöliittymällä, myöhemmin sov
 
 ### Perusversion tarjoama toiminnallisuus
 
-- Käyttäjän on mahdollista lisätä tee tietokantaan, teelle voi asettaa nimen, teelaadun, pistemäärän, hinnan, paljonko teetä on jäljellä ja paljonko teetä kuluu kerralla.
+- "TEHTY"Käyttäjän on mahdollista lisätä tee tietokantaan, teelle voi asettaa nimen, teelaadun, pistemäärän, hinnan, paljonko teetä on jäljellä ja paljonko teetä kuluu kerralla. "TEHTY"
 - Lisätylle teelle voi kirjoittaa muistiinpanoja, teen tietoja voi päivittää.
 - Lisättyjä muistiinpanoja voi selata ja muokata.
-- Lisättyjen teitten varastomääriä voi selata.
+- "TEHTY" Lisättyjen teitten varastomääriä voi selata. "TEHTY"
 - Sovellukseen ei toistaiseksi toteuteta käyttäjähallintaa
 
 ---
