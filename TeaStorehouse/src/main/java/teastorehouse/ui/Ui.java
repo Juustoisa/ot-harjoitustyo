@@ -13,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
@@ -24,11 +25,12 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.apache.commons.lang3.math.NumberUtils;
 
 public class Ui extends Application {
 
     IO io = new IO();
-    Db db = new Db();
+    Db db = new Db(false);
     TeaController tC = new TeaController(db);
 
     private Scene listTeasScene;
@@ -112,7 +114,7 @@ public class Ui extends Application {
         // Add a new tea View
         GridPane addTeaPane = new GridPane();
         addTeaPane.setAlignment(Pos.CENTER);
-        
+
         Button returnFromAddTeaButton = new Button("Return to main menu");
         returnFromAddTeaButton.setOnAction(click -> {
             appStage.setScene(startMenuScene);
@@ -190,26 +192,59 @@ public class Ui extends Application {
                 alert.show();
                 return;
             }
-            if (teaScoreField.getText().isEmpty()) {
+            if (teaScoreField.getText().isEmpty() || !NumberUtils.isParsable(teaScoreField.getText())) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Please enter tea score");
-                alert.setContentText("Tea score is mandatory");
+                alert.setContentText("Tea score is mandatory and must be a number.");
+                alert.show();
+                return;
+            }
+
+            if (!NumberUtils.isParsable(teaPriceField.getText()) && !teaPriceField.getText().isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Invalid tea price");
+                alert.setContentText("Tea price needs to be empty or a number.");
+                alert.show();
+                return;
+            }
+
+            if (!NumberUtils.isParsable(teaAmountField.getText()) && !teaAmountField.getText().isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Invalid tea amount");
+                alert.setContentText("Tea amount needs to be empty or a number.");
+                alert.show();
+                return;
+            }
+            
+            if (!NumberUtils.isParsable(teaUsageField.getText()) && !teaUsageField.getText().isEmpty()) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Invalid tea usage");
+                alert.setContentText("Tea usage needs to be empty or a number.");
                 alert.show();
                 return;
             }
             String[] teaToBeAdded = new String[7];
+            Arrays.fill(teaToBeAdded, "0");
             teaToBeAdded[1] = teaNameField.getText();
             teaToBeAdded[2] = teaTypeField.getText();
             teaToBeAdded[3] = teaScoreField.getText();
             teaToBeAdded[4] = teaPriceField.getText();
             teaToBeAdded[5] = teaAmountField.getText();
             teaToBeAdded[6] = teaUsageField.getText();
-            
-            tC.addTea(teaToBeAdded);
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
+            if (tC.addTea(teaToBeAdded)) {
+                Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Tea Added");
                 alert.setTitle("Tea Added to Storehouse");
-                alert.setContentText("Tea successfully added!");
+                alert.setContentText("Tea successfully added!\nWould you like to add a note to new the\nnew tea?");
+                
+                alert.showAndWait();
+            } else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Adding tea failed.");
+                alert.setContentText("Adding tea to database failed.");
                 alert.show();
+            }
+
         });
 
         addNewTeaScene = new Scene(addTeaPane, 900, 650);
@@ -224,43 +259,6 @@ public class Ui extends Application {
             exit();
         });
 
-//        io.print("Welcome to your Tea Storehouse");
-//        Boolean commandLoop = true;
-//        while(commandLoop){
-//            io.printMainMenu();
-//            String input = io.readString("Choose a command: ");
-//            commandLoop=runCommand(input);
-//        }
-//        io.print("Goodbye");
-//        exit();
-//    }
-//    
-//        public Boolean runCommand(String command) {
-//        switch (command) {
-//            case "1":
-//                tC.getAll();
-//                return true;
-//            case "2":
-//                io.print("Feature not usable yet.");
-//                return false;
-//            case "3":
-//                String[] placeholder = new String[7];
-//                Arrays.fill(placeholder, "");
-//                placeholder[1] = "Sample tea";
-//                placeholder[2] = "Black";
-//                placeholder[3] = "3.5";
-//                tC.addTea(placeholder);
-//                io.print("placeholder tea added to database");
-//                return true;
-//            case "4":
-//                io.print("Feature not usable yet.");
-//                return false;
-//            case "0":
-//                return false;    
-//            default:
-//                io.print("Invalid choice");
-//                return true;
-//        }
     }
 
     public static void main() {

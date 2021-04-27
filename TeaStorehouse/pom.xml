@@ -34,6 +34,11 @@
             <version>3.9.0</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.11</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
@@ -53,7 +58,8 @@
                 <version>0.8.3</version>
                 <configuration>
                     <excludes>
-                        <exclude>todoapp/ui/**/*</exclude>
+                        <exclude>teastorehouse/ui/**</exclude>
+                        <exclude>teastorehouse/Main.class</exclude>
                     </excludes>
                 </configuration>
                 <executions>
@@ -81,9 +87,10 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
+                            <finalName>TeaStorehouse</finalName>
                             <transformers>
                                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>TeaStorehouse.Main</mainClass>
+                                    <mainClass>teastorehouse.Main</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>

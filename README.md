@@ -38,11 +38,29 @@ In TeaStorehouse folder:
 
 ```console
 
-$ mvn compile exec:java -Dexec.mainClass=TeaStorehouse.Main
+$ mvn compile exec:java -Dexec.mainClass=teastorehouse.Main
 
 ```
 
-#### 3. Tests
+#### 3. To generate jar and run it
+
+In TeaStorehouse folder:
+
+```console
+
+$ mvn package
+
+```
+
+To run jar
+
+```console
+
+$ cd target/ && java -jar TeaStorehouse.jar
+
+```
+
+#### 4. Tests
 
 To test enter
 

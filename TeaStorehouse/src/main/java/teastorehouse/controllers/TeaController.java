@@ -4,6 +4,7 @@ import teastorehouse.db.Db;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import org.apache.commons.lang3.math.NumberUtils;
 
 public class TeaController {
 
@@ -20,11 +21,11 @@ public class TeaController {
             if (!rs.isBeforeFirst()) {
                 teasInDb.add("No teas in database yet");
                 return teasInDb;
-            } else { 
+            } else {
                 teasInDb.add(String.format("%-10s %-70s %-26s %-20s %-20s %-20s %-1s", "id", "name", "teatype", "score", "price", "amount", "usage"));
                 while (rs.next()) {
                     teasInDb.add(String.format("%-10s %-70s %-26s %-20s %-20s %10s %22s", rs.getInt("id"), rs.getString("name"), rs.getString("teatype"),
-                            rs.getDouble("score"), rs.getDouble("price"),  rs.getDouble("amount"), rs.getDouble("usage")));
+                            rs.getDouble("score"), rs.getDouble("price"), rs.getDouble("amount"), rs.getDouble("usage")));
                 }
             }
         } catch (SQLException ex) {
@@ -34,21 +35,25 @@ public class TeaController {
     }
 
     // [0.id, 1.name, 2.teatype, 3.score, 4.price, 5.amount, 6.usage]
-    public Boolean addTea(String[] variables) {
-
-        if (variables[1].isEmpty() || variables[2].isEmpty() || variables[3].isEmpty())  {
-            System.out.println("Mandatory information missing");
+    public Boolean addTea(String[] userInput) {
+        if (userInput[1].isEmpty() || userInput[2].isEmpty()) {
             return false;
         }
-        if (variables[4].isEmpty()) {
-            variables[4] = "0";
+        if (userInput[3].isEmpty() || !NumberUtils.isParsable(userInput[3])) {
+            return false;
         }
-        if (variables[5].isEmpty()) {
-            variables[5] = "0";
+        if (!validateEntryNumberOrEmpty(userInput[4]) || !validateEntryNumberOrEmpty(userInput[5])
+                || !validateEntryNumberOrEmpty(userInput[6])) {
+            return false;
         }
-        if (variables[6].isEmpty()) {
-            variables[6] = "0";
-        }
-        return db.addTea(variables);
+        return db.addTeaToDb(userInput);
     }
+
+    private boolean validateEntryNumberOrEmpty(String string) {
+        if (!string.isEmpty() && !NumberUtils.isParsable(string)) {
+            return false;
+        }
+        return true;
+    }
+
 }

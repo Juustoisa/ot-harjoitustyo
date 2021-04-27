@@ -15,10 +15,15 @@ public class Db {
     Connection dbConnection;
     Statement stmt;
 
-    public Db() {
+    public Db(Boolean test) {
         System.out.println("Connecting to database...");
         try {
-            this.dbConnection = DriverManager.getConnection("jdbc:sqlite:TeaStorehouse.db");
+            if (test) {
+                this.dbConnection = DriverManager.getConnection("jdbc:sqlite::memory:");
+            } else {
+                this.dbConnection = DriverManager.getConnection("jdbc:sqlite:TeaStorehouse.db");
+            }
+
             stmt = dbConnection.createStatement();
             stmt.execute("CREATE TABLE IF NOT EXISTS teas (\n"
                     + "  id INTEGER PRIMARY KEY AUTOINCREMENT, \n"
@@ -52,8 +57,8 @@ public class Db {
         }
         return result;
     }
-    
-    public Boolean addTea(String[] variables) {
+
+    public Boolean addTeaToDb(String[] variables) {
         // [0.id, 1.name String, 2.teatype String, 3.score Double, 4.price Double, 5.amount Double, 6.usage Double]
         String sql = "INSERT INTO teas(name, teatype, score, price, amount, usage) VALUES(?,?,?,?,?,?)";
         try {
@@ -65,6 +70,7 @@ public class Db {
             pstmt.setDouble(5, Double.parseDouble(variables[5]));
             pstmt.setDouble(6, Double.parseDouble(variables[6]));
             pstmt.executeUpdate();
+            return true;
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
