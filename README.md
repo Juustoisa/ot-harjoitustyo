@@ -4,6 +4,9 @@ A tea organizing app in the making.
 
 ![enter image description here](https://image.flaticon.com/icons/png/512/112/112430.png)
 
+**As of 27.04:**
+Couldn't allocate much time to project, improved tests and validations.
+
 **As of 20.04:**
 Project has been changed to use GUI, took longer than expected, ability to add teas to database has been added. Checkstyle has been implemented. Pretty slow progress for now.
 
