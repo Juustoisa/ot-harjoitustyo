@@ -1,4 +1,4 @@
-The application has layered architecture, the three layers are UI made primarily with javaFX, controller layer which talks between UI and Database, ensuring validations and data formats. And finally the database ensuring data persistence powered by SQLite.
+The application has layered architecture, the three layers are UI made primarily with javaFX, controller layer which talks between UI and Database, ensuring validations and data formats. And finally the database ensuring data persistence powered by SQLite. On first start the application forms the database, no manual configurations needed. If user wishes to delete the database it can be found in the root folder named TeaStorehouse.db
 
 
 ![architecture chart](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/TeaStorehouse/Documentation/arkkitehtuuri.jpg)
@@ -25,7 +25,7 @@ Examples of teaController methods:
 - Boolean addTea(String[] userInput) which validates userinput and saves valid inputs as a tea to the database.
 noteController will get similar methods for listing all notes, listing single tea related notes and adding new notes.
 
-As for SQL relations, Teas can have any number of notes, but all notes must associate only to 1 tea.
+As for SQL relations, teas can have any number of notes, but all notes must associate only to 1 tea.
 
 #### Example of adding a new tea:
 ![add a tea diagram](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/TeaStorehouse/Documentation/SequenceDiagramAddTea.png)
