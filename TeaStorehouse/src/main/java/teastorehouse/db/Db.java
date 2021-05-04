@@ -16,11 +16,11 @@ public class Db {
     Statement stmt;
 
     public Db(Boolean test) {
-        System.out.println("Connecting to database...");
         try {
             if (test) {
                 this.dbConnection = DriverManager.getConnection("jdbc:sqlite::memory:");
             } else {
+                System.out.println("Connecting to database...");
                 this.dbConnection = DriverManager.getConnection("jdbc:sqlite:TeaStorehouse.db");
             }
 
@@ -38,13 +38,16 @@ public class Db {
                     + "  tea_id INTEGER, \n"
                     + "  note TEXT, \n"
                     + "  FOREIGN KEY(tea_id) REFERENCES teas(id) ON DELETE CASCADE);");
-            System.out.println("Database connected");
+           if(!test) System.out.println("Database connected");
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
 
     }
-
+    /**
+     * Method to return all teas from database as ResultSet object.
+     * @return ResultSet containing all database rows in teas table.
+     */
     public ResultSet getAllTeas() {
         String sql = "SELECT * FROM teas";
         ResultSet result = null;
@@ -57,6 +60,12 @@ public class Db {
         }
         return result;
     }
+    
+    /**
+     * 
+     * @param variables
+     * @return 
+     */
 
     public Boolean addTeaToDb(String[] variables) {
         // [0.id, 1.name String, 2.teatype String, 3.score Double, 4.price Double, 5.amount Double, 6.usage Double]

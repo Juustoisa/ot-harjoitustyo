@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package teaStorehouse.controllertests;
 
 import java.util.ArrayList;
@@ -18,10 +13,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 
-/**
- *
- * @author tata
- */
 public class teaControllerTest {
 
     Db dbTest;
@@ -77,15 +68,45 @@ public class teaControllerTest {
         assertTrue(TeaList.get(1).contains("Lipton Lemon"));
         assertTrue(TeaList.get(1).contains("Black tea"));
     }
+    
+    @Test
+    public void inputsWithScoreAsNaNGetsRejected(){
+        emptyUserInput[1]="Lipton Lemon";
+        emptyUserInput[2]="Black tea";
+        emptyUserInput[3]="aa";
+        assertFalse(tC.addTea(emptyUserInput));
+    }
+    
+    @Test
+    public void inputsWithPriceAsNaNGetsRejected(){
+        emptyUserInput[1]="Lipton Lemon";
+        emptyUserInput[2]="Black tea";
+        emptyUserInput[3]="3";
+        emptyUserInput[4]="expensive";
+        assertFalse(tC.addTea(emptyUserInput));
+    }
+    
+    @Test
+    public void inputsWithAmountAsNaNGetsRejected(){
+        emptyUserInput[1]="Lipton Lemon";
+        emptyUserInput[2]="Black tea";
+        emptyUserInput[3]="3";
+        emptyUserInput[5]="plenty";
+        assertFalse(tC.addTea(emptyUserInput));
+    }
+    
+    @Test
+    public void inputsWithUsageAsNaNGetsRejected(){
+        emptyUserInput[1]="Lipton Lemon";
+        emptyUserInput[2]="Black tea";
+        emptyUserInput[3]="3";
+        emptyUserInput[6]="little";
+        assertFalse(tC.addTea(emptyUserInput));
+    }
      
 
     @After
     public void tearDown() {
     }
 
-    // TODO add test methods here.
-    // The methods must be annotated with annotation @Test. For example:
-    //
-    // @Test
-    // public void hello() {}
 }
