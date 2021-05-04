@@ -42,10 +42,10 @@ Fields 4-6 can be empty.
 
  1. Tea name*
  2. Tea type*
- 3. Score for tea*    * - needs to be a number.*
- 4. Price for tea 	*- needs to be a number.*
- 5. Amount of the tea the user has *- needs to be a number.*
- 6. How much tea gets consumed at one time of use *- needs to be a number.*
+ 3. Score for tea*     - needs to be a number.
+ 4. Price for tea 	- needs to be a number.
+ 5. Amount of the tea the user has - needs to be a number.
+ 6. How much tea gets consumed at one time of use - needs to be a number.
  
  After submitting a valid tea user is greeted with a popup informing them that the tea was successfully added.
  User is offered an option to create a note for the added tea, but this functionality doesn't yet work so choosing either has the same outcome.
