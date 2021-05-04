@@ -5,6 +5,7 @@ import teastorehouse.db.Db;
 import teastorehouse.controllers.TeaController;
 import teastorehouse.utils.IO;
 import java.util.Arrays;
+import java.util.Optional;
 import javafx.application.Application;
 import static javafx.application.Platform.exit;
 import javafx.geometry.Insets;
@@ -12,6 +13,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
@@ -37,10 +39,10 @@ public class Ui extends Application {
     private Scene addNewNoteScene;
     private Scene startMenuScene;
     private VBox teaList = new VBox(10);
+
     /**
-     * Method to update teaList inside a ScrollPane
-     * Uses TeaController class method getAll() to receive list of teas and 
-     * appends them as text.
+     * Method to update teaList inside a ScrollPane Uses TeaController class
+     * method getAll() to receive list of teas and appends them as text.
      */
     public void getTeaList() {
         teaList.getChildren().clear();
@@ -49,11 +51,11 @@ public class Ui extends Application {
             teaList.getChildren().add(new Text(tea));
         });
     }
-    
+
     /**
-     * 
+     *
      * @param appStage
-     * @throws Exception 
+     * @throws Exception
      */
     @Override
     public void start(Stage appStage) throws Exception {
@@ -185,68 +187,76 @@ public class Ui extends Application {
         addTeaPaneRight.add(addTeaButton, 3, 3);
 
         addTeaButton.setOnAction(action -> {
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+
+            String[] teaToBeAdded = new String[7];
+            Arrays.fill(teaToBeAdded, "0");
+
             if (teaNameField.getText().isEmpty()) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Please enter tea name");
                 alert.setContentText("Tea name is mandatory");
                 alert.show();
                 return;
+            } else {
+                teaToBeAdded[1] = teaNameField.getText();
             }
             if (teaTypeField.getText().isEmpty()) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Please enter tea type");
                 alert.setContentText("Tea type is mandatory");
                 alert.show();
                 return;
+            } else {
+                teaToBeAdded[2] = teaTypeField.getText();
             }
             if (teaScoreField.getText().isEmpty() || !NumberUtils.isParsable(teaScoreField.getText())) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Please enter tea score");
                 alert.setContentText("Tea score is mandatory and must be a number.");
                 alert.show();
                 return;
-            }
+            } 
+            teaToBeAdded[3] = teaScoreField.getText();
 
-            if (!NumberUtils.isParsable(teaPriceField.getText()) && !teaPriceField.getText().isEmpty()) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
+            if (!teaPriceField.getText().isEmpty() && !NumberUtils.isParsable(teaPriceField.getText())) {
                 alert.setTitle("Invalid tea price");
                 alert.setContentText("Tea price needs to be empty or a number.");
                 alert.show();
                 return;
+            } else if (!teaPriceField.getText().isEmpty()) {
+                teaToBeAdded[4] = teaPriceField.getText();
             }
 
-            if (!NumberUtils.isParsable(teaAmountField.getText()) && !teaAmountField.getText().isEmpty()) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
+            if (!teaAmountField.getText().isEmpty() && !NumberUtils.isParsable(teaAmountField.getText())) {
                 alert.setTitle("Invalid tea amount");
                 alert.setContentText("Tea amount needs to be empty or a number.");
                 alert.show();
                 return;
+            } else if (!teaAmountField.getText().isEmpty()) {
+                teaToBeAdded[5] = teaAmountField.getText();
             }
-            
-            if (!NumberUtils.isParsable(teaUsageField.getText()) && !teaUsageField.getText().isEmpty()) {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
+
+            if (!teaUsageField.getText().isEmpty() && !NumberUtils.isParsable(teaUsageField.getText())) {
+
                 alert.setTitle("Invalid tea usage");
                 alert.setContentText("Tea usage needs to be empty or a number.");
                 alert.show();
                 return;
+            } else if (!teaUsageField.getText().isEmpty()) {
+                teaToBeAdded[6] = teaUsageField.getText();
             }
-            String[] teaToBeAdded = new String[7];
-            Arrays.fill(teaToBeAdded, "0");
-            teaToBeAdded[1] = teaNameField.getText();
-            teaToBeAdded[2] = teaTypeField.getText();
-            teaToBeAdded[3] = teaScoreField.getText();
-            teaToBeAdded[4] = teaPriceField.getText();
-            teaToBeAdded[5] = teaAmountField.getText();
-            teaToBeAdded[6] = teaUsageField.getText();
 
             if (tC.addTea(teaToBeAdded)) {
-                Alert alert = new Alert(Alert.AlertType.CONFIRMATION, "Tea Added");
+                alert = new Alert(Alert.AlertType.CONFIRMATION, "Tea Added");
                 alert.setTitle("Tea Added to Storehouse");
                 alert.setContentText("Tea successfully added!\nWould you like to add a note to new the\nnew tea?");
-                
-                alert.showAndWait();
+
+                Optional<ButtonType> selection = alert.showAndWait();
+                if(selection.get() == ButtonType.OK){
+                    appStage.setScene(startMenuScene);
+                }else {
+                    appStage.setScene(startMenuScene);
+                }
             } else {
-                Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Adding tea failed.");
                 alert.setContentText("Adding tea to database failed.");
                 alert.show();
