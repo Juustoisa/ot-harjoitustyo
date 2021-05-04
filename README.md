@@ -4,6 +4,9 @@ A tea organizing app in the making.
 
 ![enter image description here](https://image.flaticon.com/icons/png/512/112/112430.png)
 
+**As of 04.05:**
+Fixed UI bug, improved tests, made required documentations + started on javadoc.
+
 **As of 27.04:**
 Couldn't allocate much time to project, improved tests and validations.
 
