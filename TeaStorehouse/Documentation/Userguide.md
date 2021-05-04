@@ -55,3 +55,6 @@ Fields 4-6 can be empty.
 Now when returning to main menu and clicking "Browse teas" user can see newly added tea:
 
 ![New tea in list](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/TeaStorehouse/Documentation/Assets/TeaListWithTea.png)
+
+
+### For now that's all the functionality in the application.
