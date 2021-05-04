@@ -21,7 +21,9 @@ Project has been started, there's some basic skeletons in place, mut not much fu
 
 [Architecture](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/TeaStorehouse/Documentation/arkkitehtuuri.md)
 
-## User guide
+[Detailed Userguide](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/TeaStorehouse/Documentation/Userguide.md)
+
+## CLI guide - working commands
 
 ### Steps
 
