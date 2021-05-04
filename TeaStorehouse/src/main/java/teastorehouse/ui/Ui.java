@@ -37,7 +37,11 @@ public class Ui extends Application {
     private Scene addNewNoteScene;
     private Scene startMenuScene;
     private VBox teaList = new VBox(10);
-
+    /**
+     * Method to update teaList inside a ScrollPane
+     * Uses TeaController class method getAll() to receive list of teas and 
+     * appends them as text.
+     */
     public void getTeaList() {
         teaList.getChildren().clear();
         ArrayList<String> teasInDb = tC.getAll();
@@ -45,7 +49,12 @@ public class Ui extends Application {
             teaList.getChildren().add(new Text(tea));
         });
     }
-
+    
+    /**
+     * 
+     * @param appStage
+     * @throws Exception 
+     */
     @Override
     public void start(Stage appStage) throws Exception {
 
