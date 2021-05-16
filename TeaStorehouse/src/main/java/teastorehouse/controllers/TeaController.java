@@ -9,18 +9,20 @@ import org.apache.commons.lang3.math.NumberUtils;
 public class TeaController {
 
     Db db;
+
     /**
      * Controller class middleware working between UI and Tea table in database.
-     * 
+     *
      * @param db needs a database object as a parameter
      */
     public TeaController(Db db) {
         this.db = db;
     }
+
     /**
      * Method to return all teas from database.
-     * 
-     * @return a list containing teas as formatted strings. 
+     *
+     * @return a list containing teas as formatted strings.
      */
     public ArrayList<String> getAll() {
         ArrayList<String> teasInDb = new ArrayList<>();
@@ -41,17 +43,17 @@ public class TeaController {
         }
         return teasInDb;
     }
+
     /**
      * Method to add tea to database.
-     * 
-     * @param userInput expects array with these values in index #:
-     *  1.name - string, 2.teatype - string, 
-     *  3.score - double, 4.price - double, 
-     *  5.amount - double, 6.usage - double.
-     * 
-     * @return True after a successful database insertion. 
-     *         False after failed validation or failed database insertion.
-     * 
+     *
+     * @param userInput expects array with these values in index #: 1.name -
+     * string, 2.teatype - string, 3.score - double, 4.price - double, 5.amount
+     * - double, 6.usage - double.
+     *
+     * @return True after a successful database insertion. False after failed
+     * validation or failed database insertion.
+     *
      */
 
     // [0.id, 1.name, 2.teatype, 3.score, 4.price, 5.amount, 6.usage]
@@ -68,11 +70,31 @@ public class TeaController {
         }
         return db.addTeaToDb(userInput);
     }
+
+    public Boolean checkIfIdExists(String id) {
+        if (!NumberUtils.isParsable(id)) {
+            return false;
+        }
+        return db.checkIfIdExists(id);
+    }
+
+    public Integer getLatestId() {
+        return db.getLatestId();
+    }
+
+    public Boolean deleteTea(String id) {
+        if (!NumberUtils.isParsable(id)) {
+            return false;
+        }
+        return db.deleteTea(Integer.parseInt(id));
+    }
+
     /**
      * Validation method which checks if given string is parsable into number.
+     *
      * @param string single string from various userinputs.
-     * @return True if string is empty or not empty & parsable. 
-     *         False if not empty & not parsable.
+     * @return True if string is empty or not empty & parsable. False if not
+     * empty & not parsable.
      */
     private boolean validateEntryNumberOrEmpty(String string) {
         if (!string.isEmpty() && !NumberUtils.isParsable(string)) {
