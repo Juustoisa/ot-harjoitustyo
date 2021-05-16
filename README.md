@@ -4,6 +4,9 @@ A tea organizing app in the making.
 
 ![enter image description here](https://image.flaticon.com/icons/png/512/112/112430.png)
 
+**As of 16.05:**
+Basic functionalities mostly done, teas and notes can be added, browsed and deleted. Documentation is lacking because of prioritizing functionalities over documentation. Also newly added functionalities didnt receive new tests.
+
 **As of 04.05:**
 Fixed UI bug, improved tests, made required documentations + started on javadoc.
 
@@ -87,6 +90,18 @@ For test coverage report enter:
 ```console
 
 $ mvn jacoco:report
+
+```
+
+In TeaStorehouse folder
+
+---
+
+For javadoc enter:
+
+```console
+
+$ mvn javadoc:javadoc
 
 ```
 
