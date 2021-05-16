@@ -3,7 +3,6 @@ package teastorehouse.ui;
 import java.util.ArrayList;
 import teastorehouse.db.Db;
 import teastorehouse.controllers.TeaController;
-import teastorehouse.utils.IO;
 import teastorehouse.utils.Validators;
 import java.util.Arrays;
 import java.util.Optional;
@@ -33,7 +32,6 @@ import teastorehouse.controllers.NoteController;
 
 public class Ui extends Application {
 
-    IO io = new IO();
     Db db = new Db(false);
     TeaController teaController = new TeaController(db);
     NoteController noteController = new NoteController(db);

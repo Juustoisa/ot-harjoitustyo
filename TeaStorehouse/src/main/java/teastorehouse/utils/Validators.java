@@ -6,10 +6,7 @@ import org.apache.commons.lang3.math.NumberUtils;
 
 public class Validators {
     
-    
-    
-    
-    
+
     
     /**
      * Validation method which checks if given string is parsable into number.

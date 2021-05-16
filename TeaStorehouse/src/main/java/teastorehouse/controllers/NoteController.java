@@ -59,13 +59,23 @@ public class NoteController {
         return db.addNoteToDb(userInput);
     }
     
+    /**
+     * Method to check if note with this id exists
+     * @param id
+     * @return true if note found. false if id is NaN or note not found.
+     */
     public Boolean checkIfIdExists(String id) {
         if (!NumberUtils.isParsable(id)) {
             return false;
         }
         return db.checkIfIdExists(id);
     }
-    
+    /**
+     * Method to delete corresponding note from db
+     * @param id
+     * 
+     * @return true on success, fail if id is NaN or delete fails.
+     */
     public Boolean deleteNote(String id) {
         if (!NumberUtils.isParsable(id)) {
             return false;
