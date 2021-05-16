@@ -27,7 +27,7 @@ After starting the application with either of the 2 options user arrives to main
 ![Main menu](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/TeaStorehouse/Documentation/Assets/Mainmenu.png)
 
 
-#### 3. Two functionalities currently work, adding tea and listing added teas.
+#### 3. Functionalities currently work, adding tea, adding notes and listing added teas& notes.
 Clicking "browse teas" lands user in Tea List View, for first time user the list is empty:
 
 ![Empty tea list](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/TeaStorehouse/Documentation/Assets/EmptyTeaList.png)
@@ -52,9 +52,15 @@ Fields 4-6 can be empty.
 
 ![New tea added](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/TeaStorehouse/Documentation/Assets/TeaAdded.png)
 
+After adding tea user gets promted to add a note. A note can also be added later from tea browsing view.
+
+Currently added notes can be seen from browsing notes.
+
+![Note list](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/TeaStorehouse/Documentation/Assets/TeaNotes.png)
+
 Now when returning to main menu and clicking "Browse teas" user can see newly added tea:
 
 ![New tea in list](https://github.com/Juustoisa/ot-harjoitustyo/blob/master/TeaStorehouse/Documentation/Assets/TeaListWithTea.png)
 
 
-### For now that's all the functionality in the application.
+User can delete teas and notes from their browsing views, when deleting a tea all related notes get deleted aswell.
