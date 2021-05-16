@@ -55,9 +55,8 @@ public class TeaController {
      * validation or failed database insertion.
      *
      */
-
-    // [0.id, 1.name, 2.teatype, 3.score, 4.price, 5.amount, 6.usage]
     public Boolean addTea(String[] userInput) {
+        // [0.id, 1.name, 2.teatype, 3.score, 4.price, 5.amount, 6.usage]
         if (userInput[1].isEmpty() || userInput[2].isEmpty()) {
             return false;
         }
